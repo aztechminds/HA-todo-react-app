@@ -28,14 +28,21 @@ function App() {
 
   const toggleTodo = (id) => {
     setTodos(
-      todos.map((todo) => (todo.id === id ? { ...todo, done: !todo.done } : todo))
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo
+      )
     );
   };
 
   return (
-    <div>
+    <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center">
       <TodoForm onAddTodo={addTodo} />
-      <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} onEdit={editTodo} />
+      <TodoList
+        todos={todos}
+        onToggle={toggleTodo}
+        onDelete={deleteTodo}
+        onEdit={editTodo}
+      />
     </div>
   );
 }
